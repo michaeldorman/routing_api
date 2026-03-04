@@ -15,7 +15,7 @@ crs = 32636
 transformer = pyproj.Transformer.from_crs(4326, crs, always_xy=True)
 
 # Demo
-@app.get("/")
+@app.get("/hello")
 async def root():
     return {"message": "Hello World"}
 
