@@ -4,9 +4,24 @@ import pyproj
 import geopandas as gpd
 import networkx as nx
 import net2
+from fastapi.middleware.cors import CORSMiddleware
 
 # App
 app = fastapi.FastAPI()
+
+# Allow CORS
+origins = [
+    "https://bgu-geography.com/net/map/",
+    "http://127.0.0.1:3000",
+]
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 # Network data
 G = nx.read_graphml('beer-sheva.xml')
