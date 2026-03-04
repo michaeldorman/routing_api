@@ -1,1 +1,5 @@
 fastapi[all]
+shapely
+pyproj
+geopandas
+networkx
