@@ -10,13 +10,9 @@ from fastapi.middleware.cors import CORSMiddleware
 app = fastapi.FastAPI()
 
 # Allow CORS
-origins = [
-    "https://bgu-geography.com/net/map/",
-    "http://127.0.0.1:3000",
-]
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=['*'],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
